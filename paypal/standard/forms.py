@@ -15,6 +15,8 @@ from django.conf import settings
 # PayPal dates have been spotted in the wild with these formats, beware!
 PAYPAL_DATE_FORMAT = ("%H:%M:%S %b. %d, %Y PST",
                       "%H:%M:%S %b. %d, %Y PDT",
+                      "%H:%M:%S %d %b %Y PST",    # note this
+                      "%H:%M:%S %d %b %Y PDT",    # and that
                       "%H:%M:%S %b %d, %Y PST",
                       "%H:%M:%S %b %d, %Y PDT",)
 
