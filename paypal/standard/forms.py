@@ -71,7 +71,7 @@ class PayPalPaymentsForm(forms.Form):
     t1 = forms.CharField(widget=ValueHiddenInput())  # Trial 1 unit of Duration, default to Month
     a2 = forms.CharField(widget=ValueHiddenInput())  # Trial 2 Price
     p2 = forms.CharField(widget=ValueHiddenInput())  # Trial 2 Duration
-    t2 = forms.CharField(widget=ValueHiddenInput())  # Trial 2 unit of Duration, default to Month    
+    t2 = forms.CharField(widget=ValueHiddenInput())  # Trial 2 unit of Duration, default to Month
     a3 = forms.CharField(widget=ValueHiddenInput())  # Subscription Price
     p3 = forms.CharField(widget=ValueHiddenInput())  # Subscription Duration
     t3 = forms.CharField(widget=ValueHiddenInput())  # Subscription unit of Duration, default to Month
@@ -161,7 +161,7 @@ class PayPalEncryptedPaymentsForm(PayPalPaymentsForm):
 
     Based on example at:
     http://blog.mauveweb.co.uk/2007/10/10/paypal-with-django/
-    
+
     """
 
     def _encrypt(self):
@@ -215,7 +215,7 @@ class PayPalSharedSecretEncryptedPaymentsForm(PayPalEncryptedPaymentsForm):
     """
     Creates a PayPal Encrypted Payments "Buy It Now" button with a Shared Secret.
     Shared secrets should only be used when your IPN endpoint is on HTTPS.
-    
+
     Adds a secret to the notify_url based on the contents of the form.
 
     """
@@ -238,7 +238,7 @@ class PayPalStandardBaseForm(forms.ModelForm):
     """Form used to receive and record PayPal IPN/PDT."""
     # PayPal dates have non-standard formats.
     time_created = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
-    payment_date = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT, localize=True)
+    #payment_date = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT, localize=True)
     next_payment_date = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
     subscr_date = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
     subscr_effective = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
