@@ -58,7 +58,6 @@ class Migration(migrations.Migration):
                 ('option_name1', models.CharField(max_length=64, blank=True)),
                 ('option_name2', models.CharField(max_length=64, blank=True)),
                 ('payer_status', models.CharField(max_length=10, blank=True)),
-                ('payment_date', models.DateTimeField(help_text='HH:MM:SS DD Mmm YY, YYYY PST', null=True, blank=True)),
                 ('payment_gross', models.DecimalField(default=0, null=True, max_digits=64, decimal_places=2, blank=True)),
                 ('payment_status', models.CharField(max_length=17, blank=True)),
                 ('payment_type', models.CharField(max_length=7, blank=True)),

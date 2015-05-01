@@ -5,11 +5,10 @@ from paypal.standard.ipn.models import PayPalIPN
 
 
 class PayPalIPNAdmin(admin.ModelAdmin):
-    date_hierarchy = 'payment_date'
     fieldsets = (
         (None, {
             "fields": [
-                "flag", "txn_id", "txn_type", "payment_status", "payment_date",
+                "flag", "txn_id", "txn_type", "payment_status",
                 "transaction_entity", "reason_code", "pending_reason",
                 "mc_currency", "mc_gross", "mc_fee", "mc_handling", "mc_shipping",
                 "auth_status", "auth_amount", "auth_exp", "auth_id"

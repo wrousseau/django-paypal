@@ -150,7 +150,6 @@ class Migration(SchemaMigration):
             'payer_id': ('django.db.models.fields.CharField', [], {'max_length': '13', 'blank': 'True'}),
             'payer_status': ('django.db.models.fields.CharField', [], {'max_length': '10', 'blank': 'True'}),
             'payment_cycle': ('django.db.models.fields.CharField', [], {'max_length': '32', 'blank': 'True'}),
-            'payment_date': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'}),
             'payment_gross': ('django.db.models.fields.DecimalField', [],
                               {'default': '0', 'null': 'True', 'max_digits': '64', 'decimal_places': '2',
                                'blank': 'True'}),

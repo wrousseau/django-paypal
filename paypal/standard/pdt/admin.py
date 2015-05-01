@@ -6,7 +6,6 @@ from paypal.standard.pdt.models import PayPalPDT
 
 # ToDo: How similiar is this to PayPalIPNAdmin? Could we just inherit off one common admin model?
 class PayPalPDTAdmin(admin.ModelAdmin):
-    date_hierarchy = 'payment_date'
     fieldsets = (
         (None, {
             "fields":
@@ -14,7 +13,6 @@ class PayPalPDTAdmin(admin.ModelAdmin):
                  'txn_id',
                  'txn_type',
                  'payment_status',
-                 'payment_date',
                  'transaction_entity',
                  'reason_code',
                  'pending_reason',

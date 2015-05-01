@@ -14,7 +14,7 @@ def ipn(request, item_check_callable=None):
     PayPal IPN endpoint (notify_url).
     Used by both PayPal Payments Pro and Payments Standard to confirm transactions.
     http://tinyurl.com/d9vu9d
-    
+
     PayPal IPN Simulator:
     https://developer.paypal.com/cgi-bin/devscr?cmd=_ipn-link-session
     """
@@ -41,7 +41,7 @@ def ipn(request, item_check_callable=None):
             flag = "Invalid form - invalid charset"
 
     if data is not None:
-        date_fields = ('time_created', 'payment_date', 'next_payment_date',
+        date_fields = ('time_created', 'next_payment_date',
                        'subscr_date', 'subscr_effective')
         for date_field in date_fields:
             if data.get(date_field) == 'N/A':

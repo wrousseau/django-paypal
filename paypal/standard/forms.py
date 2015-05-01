@@ -238,7 +238,6 @@ class PayPalStandardBaseForm(forms.ModelForm):
     """Form used to receive and record PayPal IPN/PDT."""
     # PayPal dates have non-standard formats.
     time_created = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
-    #payment_date = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT, localize=True)
     next_payment_date = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
     subscr_date = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
     subscr_effective = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
