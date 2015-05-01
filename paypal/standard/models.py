@@ -102,7 +102,7 @@ class PayPalStandardBase(Model):
     option_name1 = models.CharField(max_length=64, blank=True)
     option_name2 = models.CharField(max_length=64, blank=True)
     payer_status = models.CharField(max_length=10, blank=True)
-    payment_date = models.DateTimeField(blank=True, null=True, help_text="HH:MM:SS DD Mmm YY, YYYY PST")
+    #payment_date = models.DateTimeField(blank=True, null=True, help_text="HH:MM:SS DD Mmm YY, YYYY PST")
     payment_gross = models.DecimalField(max_digits=64, decimal_places=2, default=0, blank=True, null=True)
     payment_status = models.CharField(max_length=17, blank=True)
     payment_type = models.CharField(max_length=7, blank=True)
