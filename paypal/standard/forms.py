@@ -25,15 +25,15 @@ class PayPalPaymentsForm(forms.Form):
     """
     Creates a PayPal Payments Standard "Buy It Now" button, configured for a
     selling a single item with no shipping.
-    
+
     For a full overview of all the fields you can set (there is a lot!) see:
     http://tinyurl.com/pps-integration
-    
+
     Usage:
     >>> f = PayPalPaymentsForm(initial={'item_name':'Widget 001', ...})
     >>> f.render()
     u'<form action="https://www.paypal.com/cgi-bin/webscr" method="post"> ...'
-    
+
     """
     CMD_CHOICES = (
         ("_xclick", "Buy now or Donations"),
@@ -238,7 +238,7 @@ class PayPalStandardBaseForm(forms.ModelForm):
     """Form used to receive and record PayPal IPN/PDT."""
     # PayPal dates have non-standard formats.
     time_created = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
-    payment_date = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
+    payment_date = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT, localized=True)
     next_payment_date = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
     subscr_date = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
     subscr_effective = forms.DateTimeField(required=False, input_formats=PAYPAL_DATE_FORMAT)
